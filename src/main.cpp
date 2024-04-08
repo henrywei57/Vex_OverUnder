@@ -33,6 +33,26 @@ void pre_auton(void) {
     wait(10, msec);
   }
   heading_convert(it.heading());
+  while(1){
+  if (Brain.Screen.pressing()){
+    int X = Brain.Screen.xPosition();
+    int Y = Brain.Screen.xPosition();
+    if ((Y >= 120)){
+      Brain.Screen.clearScreen();
+      Brain.Screen. (0,0,480,272);
+      Brain.Screen.setFillColor(red);
+      Brain.Screen.printAt(180,136, "Close Auton");
+      autonoption = 1;
+
+    } else if(Y <= 120){
+      Brain.Screen.clearScreen();
+      Brain.Screen.drawRectangle(0,0,480,272);
+      Brain.Screen.setFillColor(red);
+      Brain.Screen.printAt(190,136, "Far Auton");
+      autonoption = 2;
+    }
+  }
+
 }
 
 void autonomous(void) {
