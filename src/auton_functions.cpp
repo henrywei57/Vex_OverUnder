@@ -61,22 +61,22 @@ double heading_convert(double heading){
         leftmo.stop();
         rightmo.stop();
     }
-    // void turnToAngle(double angle, double MaxVelocity, double timeoutMs){
-    //     PIDControl rotateToPID(0.4, 0, 0, 2);
-    //     // PIDControl rotateToPID();
-    //     timer timeout;
-    //     while(timeout.time(msec) <= timeoutMs && !rotateToPID.reachedGoal()){
-    //         double error = angle - it.heading();
-    //         rotateToPID.computeFromError(error);
-    //         double newTurnVelocity = rotateToPID.getValue();
-    //         driveVelocity(newTurnVelocity, -newTurnVelocity);
-    //         printf("error%3f",error);
-    //         task::sleep(20); 
+    void turnToAngle(double angle, double MaxVelocity, double timeoutMs){
+        PIDControl rotateToPID(3, 0.0005, 0, 2);
+        // PIDControl rotateToPID();
+        timer timeout;
+        while(timeout.time(msec) <= timeoutMs && !rotateToPID.reachedGoal()){
+            double error = -angle - it.rotation(degrees);
+            rotateToPID.computeFromError(error);
+            double newTurnVelocity = rotateToPID.getValue();
+            driveVelocity(newTurnVelocity, -newTurnVelocity);
+            printf("error%3f\n",error);
+            task::sleep(20); 
 
-    //     }
-    //     leftmo.stop();
-    //     rightmo.stop();
-    // }
+        }
+        leftmo.stop();
+        rightmo.stop();
+    }
     void driveVelocity(double leftPct, double rightPct){
         double scale = 100.0 / fmax(100.0, fmax(fabs(leftPct), fabs(rightPct)));
         leftPct *= scale;
@@ -84,14 +84,12 @@ double heading_convert(double heading){
         leftmo.spin(fwd, leftPct, pct);
         rightmo.spin(fwd, rightPct, pct);
     }
-
-
 void turn(float turn_degree){
   float speed_now = 0;
 
   float kp = 0.6;
-  float ki = 0.0000005;
-  float kd = 0;
+  float ki = 0;
+  float kd = 2;
 
   float error = 0;
   float prev_error = 0;
@@ -108,7 +106,6 @@ void turn(float turn_degree){
     speed_now = error * kp + INT * ki + (error - prev_error) * kd;
 
     motor_spin(speed_now, -speed_now, rpm);
-    printf("%3f\n",it.heading());
 
     prev_error = error;
 

@@ -7,8 +7,8 @@ using namespace auton;
 
 void test(){
     it.setHeading(0, degrees);
-    driveAndTurn(2, 0);
-    turn(90);
+    // driveAndTurn(2, 0);
+    turnToAngle(90, 100, 3000);
     
 }
 void far(){
