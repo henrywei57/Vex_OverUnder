@@ -1,6 +1,5 @@
 #pragma once
 
 void keybind();
-void puncher();
-void inspd();
-void despd();
+void intaout();
+void intain();

@@ -5,9 +5,13 @@
 
 
 void keybind(){
-    con.ButtonUp.pressed(puncher);
+    intaout();
+    intain();
 }
 
-void puncher(){
-    con.rumble(".-..-.");
+void intaout(){
+    inta.spin(fwd, 100, pct);
+}
+void intain(){
+    inta.spin(reverse, 100, pct);
 }
