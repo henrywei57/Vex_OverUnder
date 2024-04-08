@@ -37,10 +37,11 @@ void pre_auton(void) {
 
 void autonomous(void) {
   con.rumble("- .-. -..-. .");
-test();
-  // Brain.Screen.clearScreen();
-  // Brain.Screen.setFillColor(red);
-  // Brain.Screen.printAt(((480/2)-36), (240/2), "Auton Start!");
+close_qua();
+far_qua();
+  Brain.Screen.clearScreen();
+  Brain.Screen.setFillColor(red);
+  Brain.Screen.printAt(((480/2)-36), (240/2), "Auton Start!");
   // if(autonoption == 2){
   //   far();
   // } else if(autonoption == 1){

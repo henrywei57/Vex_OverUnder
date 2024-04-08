@@ -1,5 +1,5 @@
 #pragma once
 
-void close();
-void far();
+void close_qua();
+void far_qua();
 void test();
