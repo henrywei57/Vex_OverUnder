@@ -6,4 +6,7 @@ namespace auton {
     void turnToAngle(double angle, double MaxVelocity = 100, double timeoutMs = 1500);
     void driveVelocity(double leftPct, double rightPct);
     void turn(float turn_degree);
+    void setHeading(int degree);
+    void suk(int speed);
+    void unsuk(int speed);
 }

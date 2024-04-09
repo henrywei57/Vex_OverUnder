@@ -28,18 +28,17 @@ int autonoption = 0;
 
 void pre_auton(void) {
   vexcodeInit();
-  it.startCalibration();
-  while(it.isCalibrating()){
+  bob.startCalibration();
+  while(bob.isCalibrating()){
     wait(10, msec);
   }
-  heading_convert(it.heading());
+  heading_convert(bob.heading());
   while(1){
   if (Brain.Screen.pressing()){
     int X = Brain.Screen.xPosition();
     int Y = Brain.Screen.xPosition();
     if ((Y >= 120)){
       Brain.Screen.clearScreen();
-      Brain.Screen. (0,0,480,272);
       Brain.Screen.setFillColor(red);
       Brain.Screen.printAt(180,136, "Close Auton");
       autonoption = 1;
@@ -52,7 +51,7 @@ void pre_auton(void) {
       autonoption = 2;
     }
   }
-
+  }
 }
 
 void autonomous(void) {

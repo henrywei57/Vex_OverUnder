@@ -34,7 +34,7 @@ double heading_convert(double heading){
             newLinearVelocity = fmax(-linearMaxVelocity, fmin(linearMaxVelocity, newLinearVelocity));
 
             // Get turning velocity
-                double rotateError = angle - it.rotation(deg);
+                double rotateError = angle - bob.rotation(deg);
                 rotateToPID.computeFromError(rotateError);
                 newTurnVelocity = rotateToPID.getValue();
                 newTurnVelocity = -(fmax(-turnMaxVelocity, fmin(turnMaxVelocity, newTurnVelocity)));
@@ -55,7 +55,7 @@ double heading_convert(double heading){
         // PIDControl rotateToPID();
         timer timeout;
         while(timeout.time(msec) <= timeoutMs && !rotateToPID.reachedGoal()){
-            double error = angle - it.rotation(degrees);
+            double error = angle - bob.rotation(degrees);
             rotateToPID.computeFromError(error);
             double newTurnVelocity = rotateToPID.getValue(); 
             driveVelocity(-newTurnVelocity, newTurnVelocity); 
@@ -73,5 +73,13 @@ double heading_convert(double heading){
         leftmo.spin(fwd, leftPct, pct);
         rightmo.spin(fwd, rightPct, pct);
     }
-
+    void setHeading(int degree){
+        bob.setHeading(degree, degrees);
+    }
+    void suk(int speed){
+        inta.spin(reverse, speed, pct);
+    }
+    void unsuk(int speed){
+        inta.spin(fwd, speed, pct);
+    }
 }

@@ -46,6 +46,8 @@ void driver(){
       inta.stop(hold);
     }
 
+/////////////////////////////////////////////////////////////////
+
     double axis3 = -con.Axis3.position(pct);
     double axis1 = con.Axis1.position(pct);
     double leftVolt = axis3 - axis1;
@@ -65,6 +67,10 @@ void driver(){
     else{
         rightmo.spin(forward, rightVolt, volt);
     }
+
+//////////////////////////////////////////////////////////////////////////////
+
+
     wait(10, msec);
   }
 }

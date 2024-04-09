@@ -6,11 +6,11 @@ using namespace vex;
 using namespace auton;
 
 void close_qua(){
-    it.setHeading(0, degrees);
-    inta.spin(reverse, 100, pct);
+    setHeading(0);
+    suk();
     driveAndTurn(-1.9, 15, 100, 100);
     turnToAngle(90);
-    inta.spin(fwd, 100, pct);
+    unsuk();
     driveAndTurn(-1.2, 90, 100, 100);
     driveAndTurn(0.15, 80, 100, 100);
     turnToAngle(45);
