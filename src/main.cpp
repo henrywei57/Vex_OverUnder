@@ -5,6 +5,7 @@
 #include "main.h"
 #include "autons/auton.h"
 #include "autons/auton_functions.h"
+#include "wing.h"
 using namespace vex;
 using namespace auton;
 competition Competition;
@@ -33,25 +34,6 @@ void pre_auton(void) {
     wait(10, msec);
   }
   heading_convert(bob.heading());
-  while(1){
-  if (Brain.Screen.pressing()){
-    int X = Brain.Screen.xPosition();
-    int Y = Brain.Screen.xPosition();
-    if ((Y >= 120)){
-      Brain.Screen.clearScreen();
-      Brain.Screen.setFillColor(red);
-      Brain.Screen.printAt(180,136, "Close Auton");
-      autonoption = 1;
-
-    } else if(Y <= 120){
-      Brain.Screen.clearScreen();
-      Brain.Screen.drawRectangle(0,0,480,272);
-      Brain.Screen.setFillColor(red);
-      Brain.Screen.printAt(190,136, "Far Auton");
-      autonoption = 2;
-    }
-  }
-  }
 }
 
 void autonomous(void) {
@@ -69,6 +51,8 @@ far_qua();
 }
 
 void usercontrol(void) {
+    con.ButtonL2.pressed(Front_wings);
+    con.ButtonL1.pressed(Back_wings);
   driver();
 
 }

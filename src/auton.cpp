@@ -7,17 +7,19 @@ using namespace auton;
 
 void close_qua(){
     setHeading(0);
-    suk();
-    driveAndTurn(-1.9, 15, 100, 100);
+    suk(100);
+    driveAndTurn(-1.83, 15, 100, 100);
     turnToAngle(90);
-    unsuk();
+    ftwing.set(1);
+    unsuk(100);
     driveAndTurn(-1.2, 90, 100, 100);
+    ftwing.set(0);
     driveAndTurn(0.15, 80, 100, 100);
     turnToAngle(45);
-    driveAndTurn(2.55, 45, 100, 100);
+    driveAndTurn(2.54, 45, 100, 100);
     turnToAngle(-30);
     driveAndTurn(0.9, -85, 97, 100);
-    driveAndTurn(1.45, -90, 100, 100);
+    driveAndTurn(1.2, -90, 100, 100);
 }
 void far_qua(){
 

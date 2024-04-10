@@ -20,7 +20,9 @@ motor_group rightmo = motor_group(r1, r2, r3);
 inertial bob = inertial(PORT15);
 motor inta = motor(PORT16, ratio18_1, 0);
 motor pner = motor(PORT12, ratio18_1, 0);
-digital_out intawings = digital_out(Brain.ThreeWirePort.H);
+digital_out intawings = digital_out(Brain.ThreeWirePort.A);
+digital_out ftwing = digital_out(Brain.ThreeWirePort.H);
+
 // VEXcode generated functions
 
 
