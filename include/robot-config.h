@@ -16,8 +16,8 @@ extern motor r3;
 extern motor_group rightmo;
 extern motor inta;
 extern motor pner;
-extern digital_out intawings;
-extern digital_out ftwing;
+extern digital_out intawing1;
+extern digital_out intawing2;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 

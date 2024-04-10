@@ -9,4 +9,5 @@ namespace auton {
     void setHeading(int degree);
     void suk(int speed);
     void unsuk(int speed);
+    extern double fwdspd;
 }

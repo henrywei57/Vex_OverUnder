@@ -37,8 +37,8 @@ void pre_auton(void) {
 }
 
 void autonomous(void) {
-  con.rumble("- .-. -..-. .");
-close_qua();
+  // con.rumble("- .-. -----...-.-.-..-...----.-.-...--...-. .");
+// close_qua();
 far_qua();
   Brain.Screen.clearScreen();
   Brain.Screen.setFillColor(red);
@@ -51,7 +51,7 @@ far_qua();
 }
 
 void usercontrol(void) {
-    con.ButtonL2.pressed(Front_wings);
+    // con.ButtonL2.pressed(Front_wings);
     con.ButtonL1.pressed(Back_wings);
   driver();
 
