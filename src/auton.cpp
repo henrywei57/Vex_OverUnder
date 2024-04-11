@@ -28,12 +28,36 @@ void close_qua(){
 
 }
 void far_qua(){
-    suk(30);
-    wait(300, msec);
-    driveAndTurn(1.3, 0);
-    driveAndTurn(1, -90, 100, 70);
-    driveAndTurn(-0.3, -90);
-    turnToAngle(90);
-    driveAndTurn(0.3, 90);
+    timer tmer;
+    sped = 0.065;
+    setHeading(0);
+    suk(100);
+    driveAndTurn(-2.5, 0);
+    turnToAngle(130);
+    intawing1.set(1);
+    intawing2.set(1);
     unsuk(100);
+    sped = 0.1;
+    driveAndTurn(-1.535, 123);
+    sped = 0.05;
+    intawing1.set(0);
+    intawing2.set(0);
+    turnToAngle(-93);
+    suk(100);
+    driveAndTurn(-1.26, -63, 100, 60);
+    // driveAndTurn(0.1, -60, 100, 80);
+    turnToAngle(-10);
+    driveAndTurn(1.9867, -10, 100, 100);
+    turnToAngle(-80);
+    dropdown.set(1);
+    driveAndTurn(0.6, -140, 100, 10);
+    dropdown.set(0);
+    turnToAngle(50);
+    intawing1.set(1);
+    wait(300, msec);
+    unsuk(100);
+    sped = 0.1;
+    driveAndTurn(-0.9, 55, 100, 100);
+    // driveAndTurn(0.5, -45, 100, 100);
+    printf("%d",tmer.time(seconds));
 }

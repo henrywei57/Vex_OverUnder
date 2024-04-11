@@ -22,6 +22,7 @@ motor inta = motor(PORT16, ratio18_1, 0);
 motor pner = motor(PORT12, ratio18_1, 0);
 digital_out intawing1 = digital_out(Brain.ThreeWirePort.A);
 digital_out intawing2 = digital_out(Brain.ThreeWirePort.H);
+digital_out dropdown = digital_out(Brain.ThreeWirePort.D);
 
 // VEXcode generated functions
 

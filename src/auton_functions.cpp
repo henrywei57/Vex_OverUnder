@@ -50,7 +50,7 @@ double heading_convert(double heading){
         rightmo.stop();
     }
     void turnToAngle(double angle, double MaxVelocity, double timeoutMs){
-        PIDControl rotateToPID(0.46, 0, 0, 2);
+        PIDControl rotateToPID(0.5, 0, 0, 2);
         // PIDControl rotateToPID();
         timer timeout;
         while(timeout.time(msec) <= timeoutMs && !rotateToPID.reachedGoal()){

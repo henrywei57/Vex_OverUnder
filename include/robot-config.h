@@ -18,6 +18,7 @@ extern motor inta;
 extern motor pner;
 extern digital_out intawing1;
 extern digital_out intawing2;
+extern digital_out dropdown;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 
