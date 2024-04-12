@@ -6,16 +6,16 @@ using namespace vex;
 bool Front = 1;
 bool Back = 1;
 
-// void Front_wings(){
-//     if(Front){
-//         ftwing.set(true);
-//         Front = 0;
-//     }
-//     else if(!Front){
-//         ftwing.set(false);
-//         Front = 1;
-//     }
-// }
+void Front_wings(){
+    if(Front){
+        dropdown.set(true);
+        Front = 0;
+    }
+    else if(!Front){
+        dropdown.set(false);
+        Front = 1;
+    }
+}
 
 void Back_wings(){
     if(Back){

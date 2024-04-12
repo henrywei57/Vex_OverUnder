@@ -51,7 +51,7 @@ far_qua();
 }
 
 void usercontrol(void) {
-    // con.ButtonL2.pressed(Front_wings);
+    con.ButtonL2.pressed(Front_wings);
     con.ButtonL1.pressed(Back_wings);
   driver();
 
