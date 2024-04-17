@@ -76,9 +76,9 @@ con.Axis3.position(pct);
 
 //////////////////////////////////////////////////////////////////////////////
   
-    Brain.Screen.print(inta.torque());
+    // Brain.Screen.print(inta.torque());
     wait(10, msec);
-    Brain.Screen.clearLine();
+    // Brain.Screen.clearLine();
   }
 
 

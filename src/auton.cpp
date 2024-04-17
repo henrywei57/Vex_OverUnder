@@ -9,25 +9,31 @@ void close_qua(){
     sped = 0.05;
     setHeading(0);
     suk(100);
+    sped = 0.055;
     driveAndTurn(-1.72, 23, 100, 100);
     turnToAngle(0);
     driveAndTurn(0.05, 15, 100, 100);
-    turnToAngle(90);
+    turnToAngle(89);
     inta.stop(hold);
     intawing2.set(1);
     unsuk(100);
-    driveAndTurn(-1.15, 90, 100, 100);
+    sped = 0.1;
+    driveAndTurn(-1.15, 100, 100, 100);
+    sped = 0.05;
     intawing2.set(0);
     driveAndTurn(0.2, 90, 100, 100);
-    turnToAngle(45);
-    driveAndTurn(2.47, 50, 100, 100);
+    driveAndTurn(0.36, 45, 30, 100);
+    // turnToAngle(45);
+    driveAndTurn(2.02, 50, 100, 100);
     turnToAngle(-30);
+    dropdown.set(1);
     driveAndTurn(0.6, -85, 97, 100);
+    dropdown.set(0);
     sped = 0.1;
-    driveAndTurn(1.3, -90, 100, 100);
+    driveAndTurn(1.33, -90, 100, 100);
 
 }
-void far_qua(){
+void far_elim(){
     timer tmer;
     sped = 0.065;
     setHeading(0);
@@ -62,4 +68,71 @@ void far_qua(){
     driveAndTurn(100, 68.34, 100, 100);
     // driveAndTurn(0.5, -45, 100, 100);
 
+}
+
+void close_elim(){
+    setHeading(0);
+
+    sped = 0.07;
+    suk(50);
+    driveAndTurn(-1.93, 0);
+    turnToAngle(80);
+    intawing2.set(1);
+    unsuk(100);
+    sped = 0.1;
+    driveAndTurn(-0.98, 45);
+    driveAndTurn(0.4, 45);
+    sped = 0.07;
+    intawing2.set(0);
+    turnToAngle(13.5);
+    driveAndTurn(2, 16);    
+    intawing2.set(1);
+    wait(300, msec);
+    intawing2.set(0);
+    turnToAngle(100);
+    intawing2.set(1);
+    intawing1.set(1);
+    driveAndTurn(0.5, 100);
+
+}
+
+void far_qua(){
+    setHeading(0);
+    sped = 0.07;
+    suk(80);
+    driveAndTurn(-2, 0);
+    wait(0.1, sec);
+    inta.stop(hold);
+    driveAndTurn(-2, 90);
+    // driveAndTurn(1.87, 0);
+    // unsuk(100);
+    // turnToAngle(60);
+    // wait(50, msec);
+    // turnToAngle(-80);
+    // suk(70);
+    // driveAndTurn(-1.32, -70, 100, 90);
+    // driveAndTurn(1.2, -70);
+    // dropdown.set(1);
+    // driveAndTurn(0.6, -170, 50, 20);
+    // dropdown.set(0);
+    // turnToAngle(50);
+    // sped = 0.10;
+    // unsuk(100);
+    // wait(450, msec);
+    // intawing2.set(1);
+    // intawing1.set(1);
+    // driveAndTurn(-1.1, 53, 100, 100);
+    // intawing2.set(0);
+    // intawing1.set(0);
+    // sped = 0.07;
+    // driveAndTurn(3.05, 110, 100, 99);
+    // turnToAngle(110);
+    // leftmo.stop(coast);
+    // rightmo.stop(coast);
+    // driveAndTurn(0.45, 110, 100, 100);
+}
+
+void skill(){
+
+    
 }

@@ -2,4 +2,6 @@
 
 void close_qua();
 void far_qua();
-void test();
+void far_elim();
+void close_elim();
+void skill();

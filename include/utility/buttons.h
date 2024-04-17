@@ -1,3 +1,4 @@
 #pragma once
 
-int autonpick();
+void board();
+int Decide_side();
