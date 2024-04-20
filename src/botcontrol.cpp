@@ -1,4 +1,5 @@
 #include "botcontrol.h"
+#include "utility/buttons.h"
 #include "main.h"
 #include "robot-config.h"
 #include "wing.h"
@@ -31,7 +32,11 @@ int curveJoystick(bool red, int input, double t){
 }
 
 void driver(){
+  //  resetPuncher();
+   
+
   while(1){
+   
     // double turnVal = curveJoystick(false, con.Axis1.position(percent), turningCurve); //Get curvature according to settings [-100,100]
     // double forwardVal = curveJoystick(false, con.Axis3.position(percent), forwardCurve); //Get curvature according to settings [-100,100]
 
@@ -49,7 +54,16 @@ void driver(){
     } else{
       inta.stop(hold);
     }
-
+    if(con.ButtonRight.pressing()){
+      smlboi.spin(reverse, 100, pct);
+      ptoboi.spin(reverse, 100, pct);
+    } else if(con.ButtonLeft.pressing()){
+      smlboi.spin(fwd, 100, pct);
+      ptoboi.spin(fwd, 100, pct);
+    } else{
+      smlboi.stop(hold);
+      ptoboi.stop(hold);
+    }
 /////////////////////////////////////////////////////////////////
 
     double axis3 = 
@@ -75,11 +89,16 @@ con.Axis3.position(pct);
     }
 
 //////////////////////////////////////////////////////////////////////////////
-  
-    // Brain.Screen.print(inta.torque());
+
+
+////////////////////////////////////////////////////////////////////////////////
+    Brain.Screen.print(dstboi.objectDistance(mm));
     wait(10, msec);
-    // Brain.Screen.clearLine();
+    Brain.Screen.clearLine();
   }
 
 
+
+
 }
+

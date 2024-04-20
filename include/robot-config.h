@@ -10,15 +10,19 @@ extern motor l1;
 extern motor l2;
 extern motor l3;
 extern motor_group leftmo;
+extern motor_group puncher;
 extern motor r1;
 extern motor r2;
 extern motor r3;
 extern motor_group rightmo;
 extern motor inta;
-extern motor pner;
+extern motor smlboi;
+extern motor ptoboi;
 extern digital_out intawing1;
 extern digital_out intawing2;
 extern digital_out dropdown;
+extern digital_out pto;
+extern distance dstboi;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 

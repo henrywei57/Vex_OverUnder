@@ -5,6 +5,8 @@ using namespace vex;
 
 bool Front = 1;
 bool Back = 1;
+bool ptoo = 1;
+
 
 void Front_wings(){
     if(Front){
@@ -29,6 +31,13 @@ void Back_wings(){
         Back = 1;
     }
 }
-void togglePunnett() {
-
+void ptooo(){
+    if(ptoo){
+        pto.set(1);
+        ptoo = 0;
+    }
+    else if(!ptoo){
+        pto.set(0);
+        ptoo = 1;
+    }
 }

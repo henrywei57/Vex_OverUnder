@@ -7,6 +7,7 @@
 #include "autons/auton_functions.h"
 #include "wing.h"
 #include "utility/buttons.h"
+#include "utility/puncher.h"
 using namespace vex;
 using namespace auton;
 competition Competition;
@@ -140,6 +141,7 @@ void usercontrol(void) {
 
     con.ButtonL2.pressed(Front_wings);
     con.ButtonL1.pressed(Back_wings);
+    con.ButtonUp.pressed(ptooo);
   driver();
 
 }
