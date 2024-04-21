@@ -7,7 +7,7 @@
 #include "autons/auton_functions.h"
 #include "wing.h"
 #include "utility/buttons.h"
-#include "utility/puncher.h"
+// #include "utility/puncher.h"
 using namespace vex;
 using namespace auton;
 competition Competition;
@@ -75,47 +75,7 @@ void pre_auton(void) {
   wait(20, msec);
 }
 
-//   vexcodeInit();
-//   leftmo.setStopping(brake);
-//   rightmo.setStopping(brake);
-//   Brain.Screen.drawRectangle(240, 0, 240, 240, blue);
-//   Brain.Screen.drawRectangle(0, 0, 240, 240, red);
-//   Brain.Screen.setPenColor(white);
-//   Brain.Screen.setPenWidth(5);
-//   Brain.Screen.drawLine(240,0,240,240);
-//   Brain.Screen.drawLine(0, 120, 480, 120);
-//   Brain.Screen.drawLine(0, 0, 0, 240);
-//   Brain.Screen.drawLine(0, 0, 480, 0);
-//   Brain.Screen.drawLine(480, 240, 480, 0);
-//   Brain.Screen.drawLine(480, 240, 0, 280);
 
-//   Brain.Screen.printAt(480/2-54, 240/2/2+10, "Close Auton");
-//   Brain.Screen.printAt(480/2-39, 240/2/2+10+120, "Far Auton");
-//     // Brain.Screen.printAt(60, 60, "Far Auton");
-//   bob.startCalibration();
-//   while(bob.isCalibrating()){
-//     wait(10, msec);
-//   }
-//   while(1){
-//   if (Brain.Screen.pressing()){
-//     int X = Brain.Screen.xPosition();
-//     int Y = Brain.Screen.xPosition();
-//     if ((Y >= 120)){
-//       Brain.Screen.clearScreen();
-//       Brain.Screen.drawRectangle(0,0,480,272);
-//       Brain.Screen.setFillColor(red);
-//       Brain.Screen.printAt(180,136, "Close Auton");
-//       autonoption = 1;
-
-//     } else if(Y <= 120){
-//       Brain.Screen.clearScreen();
-//       Brain.Screen.drawRectangle(0,0,480,272);
-//       Brain.Screen.setFillColor(red);
-//       Brain.Screen.printAt(190,136, "Far Auton");
-//       autonoption = 2;
-//     }
-//   }
-// }
 }
 
 void autonomous(void) {
@@ -138,11 +98,18 @@ void autonomous(void) {
 }
 
 void usercontrol(void) {
-
+    hangg.set(1);
     con.ButtonL2.pressed(Front_wings);
     con.ButtonL1.pressed(Back_wings);
-    con.ButtonUp.pressed(ptooo);
+    con.ButtonUp.pressed(hang);
+    // resetPuncher();
   driver();
+  while(1){
+    while(dstboi.objectDistance(mm) < 30){
+      puncher.spin(fwd, 100, pct);
+    }
+    puncher.stop();
+  }
 
 }
 int main() {

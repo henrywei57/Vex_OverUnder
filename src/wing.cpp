@@ -5,7 +5,7 @@ using namespace vex;
 
 bool Front = 1;
 bool Back = 1;
-bool ptoo = 1;
+bool hanggg = 0;
 
 
 void Front_wings(){
@@ -31,13 +31,13 @@ void Back_wings(){
         Back = 1;
     }
 }
-void ptooo(){
-    if(ptoo){
-        pto.set(1);
-        ptoo = 0;
+void hang(){
+    if(hanggg){
+        hangg.set(1);
+        hanggg = 0;
     }
-    else if(!ptoo){
-        pto.set(0);
-        ptoo = 1;
+    else if(!hanggg){
+        hangg.set(0);
+        hanggg = 1;
     }
 }

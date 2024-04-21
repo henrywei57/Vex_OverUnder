@@ -21,7 +21,7 @@ extern motor ptoboi;
 extern digital_out intawing1;
 extern digital_out intawing2;
 extern digital_out dropdown;
-extern digital_out pto;
+extern digital_out hangg;
 extern distance dstboi;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
