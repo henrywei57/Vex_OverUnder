@@ -22,7 +22,7 @@ extern digital_out intawing1;
 extern digital_out intawing2;
 extern digital_out dropdown;
 extern digital_out hangg;
-extern distance dstboi;
+extern distance dst;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 

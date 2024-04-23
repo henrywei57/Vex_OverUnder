@@ -33,7 +33,7 @@ void close_qua(){
     driveAndTurn(1.33, -90, 100, 100);
 
 }
-void far_elim(){
+void far_elim_2(){
     timer tmer;
     sped = 0.065;
     setHeading(0);
@@ -103,36 +103,63 @@ void far_qua(){
     driveAndTurn(-2, 0);
     wait(0.1, sec);
     inta.stop(hold);
-    driveAndTurn(-2, 90);
-    // driveAndTurn(1.87, 0);
-    // unsuk(100);
-    // turnToAngle(60);
-    // wait(50, msec);
-    // turnToAngle(-80);
-    // suk(70);
-    // driveAndTurn(-1.32, -70, 100, 90);
-    // driveAndTurn(1.2, -70);
-    // dropdown.set(1);
-    // driveAndTurn(0.6, -170, 50, 20);
-    // dropdown.set(0);
-    // turnToAngle(50);
-    // sped = 0.10;
-    // unsuk(100);
-    // wait(450, msec);
-    // intawing2.set(1);
-    // intawing1.set(1);
-    // driveAndTurn(-1.1, 53, 100, 100);
-    // intawing2.set(0);
-    // intawing1.set(0);
-    // sped = 0.07;
-    // driveAndTurn(3.05, 110, 100, 99);
-    // turnToAngle(110);
-    // leftmo.stop(coast);
-    // rightmo.stop(coast);
+    driveAndTurn(1.87, 0);
+    unsuk(100);
+    turnToAngle(60);
+    wait(50, msec);
+    turnToAngle(-80);
+    suk(70);
+    driveAndTurn(-1.32, -70, 100, 90);
+    driveAndTurn(1.2, -70);
+    dropdown.set(1);
+    driveAndTurn(0.6, -170, 50, 20);
+    dropdown.set(0);
+    turnToAngle(50);
+    sped = 0.10;
+    unsuk(100);
+    wait(450, msec);
+    intawing2.set(1);
+    intawing1.set(1);
+    driveAndTurn(-1.1, 53, 100, 100);
+    intawing2.set(0);
+    intawing1.set(0);
+    sped = 0.07;
+    driveAndTurn(2.9, 110, 100, 99);
+    turnToAngle(110);
+    leftmo.stop(coast);
+    rightmo.stop(coast);
     // driveAndTurn(0.45, 110, 100, 100);
 }
 
-void skill(){
-
-    
+void far_elim(){
+    setHeading(0);
+    sped = 0.07;
+    intawing1.set(1);
+    wait(150, msec);
+    intawing1.set(0);
+    driveAndTurn(-1.65, -45, 100, 100);
+    intawing2.set(1);
+    suk(10);
+    turnToAngle(310, 20);
+    suk(100);
+    intawing2.set(0);
+    driveAndTurn(-0.735, 270, 100, 100, 600);
+    turnToAngle(90);
+    unsuk(100);
+    intawing2.set(1);
+    intawing1.set(1);
+    driveAndTurn(-1.3, 90, 100, 100);
+    intawing2.set(0);
+    intawing1.set(0);
+    // dropdown.set(1);
+    driveAndTurn(1.7, 0, 37, 100, 1500);
+    driveAndTurn(1.55, -150, 100, 90);
+    // dropdown.set(0);
+    suk(100);
+    driveAndTurn(-2.38, -90, 100, 100);
+    turnToAngle(90);
+    unsuk(30);
+    driveAndTurn(-3, 0, 100, 30);
+    driveAndTurn(2.5, 90, 100, 35);
+    // driveAndTurn(-3,-90, 100, 70);
 }

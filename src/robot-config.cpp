@@ -24,11 +24,11 @@ digital_out intawing1 = digital_out(Brain.ThreeWirePort.A);
 digital_out intawing2 = digital_out(Brain.ThreeWirePort.H);
 digital_out dropdown = digital_out(Brain.ThreeWirePort.D);
 digital_out hangg = digital_out(Brain.ThreeWirePort.F);
-motor smlboi = motor(PORT10, ratio18_1, 10);
+motor smlboi = motor(PORT10, ratio18_1, 0);
 motor ptoboi = motor(PORT1, ratio36_1, 1);
-distance dstboi = distance(PORT2);
+distance dst = distance(PORT2);
 motor_group puncher = motor_group(ptoboi, smlboi);
-// VEXcode generated functions
+// VEXcode generated  
 
 
 

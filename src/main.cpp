@@ -7,7 +7,7 @@
 #include "autons/auton_functions.h"
 #include "wing.h"
 #include "utility/buttons.h"
-// #include "utility/puncher.h"
+#include "puncher.h"
 using namespace vex;
 using namespace auton;
 competition Competition;
@@ -33,10 +33,19 @@ void pre_auton(void) {
   vexcodeInit();
   board();
 
+
+  
   bob.startCalibration();
   while(bob.isCalibrating()){
     wait(10, msec);
   }
+
+    task puncherTask([] () -> int {
+    puncherThread();
+    return 1;
+  });
+  bool alreadyResetCata = false;
+
   // heading_convert(bob.heading());
   while(1){
   if (Brain.Screen.pressing()){
@@ -95,21 +104,18 @@ void autonomous(void) {
   } else if(autonoption == 4){
     close_qua();
   }
+
 }
 
 void usercontrol(void) {
-    hangg.set(1);
+    resetCatapult();
+    // hangg.set(1);
     con.ButtonL2.pressed(Front_wings);
     con.ButtonL1.pressed(Back_wings);
-    con.ButtonUp.pressed(hang);
+    con.ButtonDown.pressed(hang);
     // resetPuncher();
   driver();
-  while(1){
-    while(dstboi.objectDistance(mm) < 30){
-      puncher.spin(fwd, 100, pct);
-    }
-    puncher.stop();
-  }
+
 
 }
 int main() {

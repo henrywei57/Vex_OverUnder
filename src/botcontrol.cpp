@@ -66,9 +66,7 @@ void driver(){
     }
 /////////////////////////////////////////////////////////////////
 
-    double axis3 = 
-    
-con.Axis3.position(pct);
+    double axis3 = con.Axis3.position(pct);
     double axis1 = con.Axis1.position(pct);
     double leftVolt = axis3 - axis1;
     double rightVolt = axis3 + axis1;
@@ -88,11 +86,13 @@ con.Axis3.position(pct);
         rightmo.spin(forward, rightVolt, volt);
     }
 
+
+
 //////////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////////////////////////////////////////////////////////////////
-    Brain.Screen.print(dstboi.objectDistance(mm));
+    Brain.Screen.print(dst.objectDistance(mm));
     wait(10, msec);
     Brain.Screen.clearLine();
   }
