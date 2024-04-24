@@ -3,6 +3,7 @@
 using namespace vex;
 
 void board(){
+        ////////////////////////////////////////
   Brain.Screen.drawRectangle(0, 30, 240, 105);
   Brain.Screen.setFillColor(black);
   Brain.Screen.printAt(80, 95, "Far Elim");  
@@ -17,3 +18,4 @@ void board(){
   Brain.Screen.printAt(315, 195, "Close Qua");
 
 }
+

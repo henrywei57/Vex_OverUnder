@@ -90,7 +90,6 @@ void close_elim(){
     wait(300, msec);
     intawing2.set(0);
     turnToAngle(100);
-    intawing2.set(1);
     intawing1.set(1);
     driveAndTurn(0.5, 100);
 

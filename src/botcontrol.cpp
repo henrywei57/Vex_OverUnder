@@ -54,16 +54,16 @@ void driver(){
     } else{
       inta.stop(hold);
     }
-    if(con.ButtonRight.pressing()){
-      smlboi.spin(reverse, 100, pct);
-      ptoboi.spin(reverse, 100, pct);
-    } else if(con.ButtonLeft.pressing()){
-      smlboi.spin(fwd, 100, pct);
-      ptoboi.spin(fwd, 100, pct);
-    } else{
-      smlboi.stop(hold);
-      ptoboi.stop(hold);
-    }
+    // if(con.ButtonRight.pressing()){
+    //   smlboi.spin(reverse, 100, pct);
+    //   ptoboi.spin(reverse, 100, pct);
+    // } else if(con.ButtonLeft.pressing()){
+    //   smlboi.spin(fwd, 100, pct);
+    //   ptoboi.spin(fwd, 100, pct);
+    // } else{
+    //   smlboi.stop(hold);
+    //   ptoboi.stop(hold);
+    // }
 /////////////////////////////////////////////////////////////////
 
     double axis3 = con.Axis3.position(pct);
@@ -91,8 +91,10 @@ void driver(){
 //////////////////////////////////////////////////////////////////////////////
 
 
+
 ////////////////////////////////////////////////////////////////////////////////
-    Brain.Screen.print(dst.objectDistance(mm));
+    double xxxx = (leftmo.temperature(celsius)+rightmo.temperature(celsius))/2;
+    Brain.Screen.print(xxxx);
     wait(10, msec);
     Brain.Screen.clearLine();
   }

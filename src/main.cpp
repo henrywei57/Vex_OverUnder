@@ -22,6 +22,7 @@ bool intawing = 0;
 int endX = originX + width;
 
 int autonoption = 0;
+bool taboption = 1;
     float deadband(float input, float width){
   if (fabs(input)<width){
     return(0);
@@ -79,6 +80,11 @@ void pre_auton(void) {
     Brain.Screen.printAt(310, 195, "Close Qua");  
       autonoption = 4;
 
+    } else if(Y <= 30){
+      Brain.Screen.clearScreen();
+
+    
+
     }
   }
   wait(20, msec);
@@ -88,7 +94,7 @@ void pre_auton(void) {
 }
 
 void autonomous(void) {
-  con.rumble("- .-. -----...-.-.-..-...----.-.-...--...-. .");
+  con.rumble("- .-. ..--...-. .");
 // close_qua();
 // far_qua();
 // close_elim();
@@ -104,6 +110,7 @@ void autonomous(void) {
   } else if(autonoption == 4){
     close_qua();
   }
+    close_elim();
 
 }
 
@@ -113,6 +120,8 @@ void usercontrol(void) {
     con.ButtonL2.pressed(Front_wings);
     con.ButtonL1.pressed(Back_wings);
     con.ButtonDown.pressed(hang);
+
+
     // resetPuncher();
   driver();
 
