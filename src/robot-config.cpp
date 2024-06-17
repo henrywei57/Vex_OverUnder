@@ -9,6 +9,8 @@ brain  Brain;
 
 // VEXcode device constructors
 controller con;
+//controller 
+
 motor l1 = motor(PORT19, ratio6_1, 0);
 motor l2 = motor(PORT18, ratio6_1, 1);
 motor l3 = motor(PORT20, ratio6_1, 0);
@@ -18,16 +20,26 @@ motor r2 = motor(PORT12, ratio6_1, 0);
 motor r3 = motor(PORT13, ratio6_1, 1);
 motor_group rightmo = motor_group(r1, r2, r3);
 inertial bob = inertial(PORT15);
+//chassis
+
+
 motor inta = motor(PORT16, ratio18_1, 0);
+//intake
+
 motor pner = motor(PORT12, ratio18_1, 0);
+//puncher 
+
 digital_out intawing1 = digital_out(Brain.ThreeWirePort.A);
 digital_out intawing2 = digital_out(Brain.ThreeWirePort.H);
 digital_out dropdown = digital_out(Brain.ThreeWirePort.D);
 digital_out hangg = digital_out(Brain.ThreeWirePort.F);
+//pneumatics
+
 motor smlboi = motor(PORT10, ratio18_1, 0);
 motor ptoboi = motor(PORT1, ratio36_1, 1);
 distance dst = distance(PORT2);
-motor_group puncher = motor_group(ptoboi, smlboi);
+//distance sensor
+
 // VEXcode generated  
 
 
