@@ -20,7 +20,7 @@ motor r2 = motor(PORT12, ratio6_1, 0);
 motor r3 = motor(PORT13, ratio6_1, 1);
 motor_group rightmo = motor_group(r1, r2, r3);
 inertial bob = inertial(PORT15);
-//chassis
+//chassis 
 
 
 motor inta = motor(PORT16, ratio18_1, 0);
@@ -37,6 +37,8 @@ digital_out hangg = digital_out(Brain.ThreeWirePort.F);
 
 motor smlboi = motor(PORT10, ratio18_1, 0);
 motor ptoboi = motor(PORT1, ratio36_1, 1);
+//other motors
+
 distance dst = distance(PORT2);
 //distance sensor
 
